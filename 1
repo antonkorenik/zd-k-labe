@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int comp_num;
+
+
+int main()
+{
+    srand(time(0));
+    comp_num = 1 + rand() % 6;
+    char choice = 'y';
+    do
+    {
+        cout << "\nEnter number from 1 to 6 " <<endl;
+        int num;
+        cin >> num;
+        if (num == comp_num) break; 
+        else cout << "not really ";
+        cout << "repeat? y/n ";
+        cin >> choice;
+
+    } 
+    while (choice == 'y' || choice == 'Y');
+    cout << "result: " << comp_num <<endl;
+
+    cout << "don't lose your luck:) Bye...";
+
+    return 0;
+}
