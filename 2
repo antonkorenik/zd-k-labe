@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a, b, c;
+    char choice = 'y';
+    while (choice == 'y' || choice == 'Y')
+    {
+        cout << "Enter the first side of the triangle: "; cin >> a;
+        cout << "Enter the second side of the triangle: "; cin >> b;
+        cout << "Enter the third side of the triangle: "; cin >> c;
+        if ((abs(a - b) <= c) && (c <= a + b))
+            cout << "Such a triangle can be built" << endl;
+        else
+            cout << "Such a triangle cannot be built" << endl;
+        cout << "Again? y/n" <<endl;
+        cin >> choice;
+    }
+    return 0;
+}
