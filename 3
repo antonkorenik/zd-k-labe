@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int sum, num;
+
+int main()
+{
+    for (int num; ;)
+    {
+        cout << "\nEnter int number: " << endl;
+        cin >> num;
+        sum += num;
+        cout << "Sum: " << sum <<endl;
+        if (num == 0) break;
+    } 
+    cout << "Result Sum: " << sum << endl;
+
+    cout << "You enter 0 ";
+
+    return 0;
+}
