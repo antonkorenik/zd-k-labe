@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+const double pi = 3.1415926;
+
+double square(double);
+double rectangle(double);
+double circle(double);
+double func(double, int);
+int menu();
+
+int main()
+{
+    while (true)
+    {
+        int action = menu(); 
+        if (action == 4) break;
+        cout << "enter a: ";
+        double a;
+        cin >> a;
+        if (action == 1) cout << "S(" << "square" << ")=" << func(a, action);
+        if (action == 2) cout << "S(" << "rectangle" << ")=" << func(a, action);
+        if (action == 3) cout << "S(" << "circle" << ")=" << func(a,action);
+         
+    }
+
+    return 0;
+}
+
+double square(double arg)
+{
+    return arg * arg;
+
+}
+
+double rectangle(double arg)
+{
+    int b;
+    cout << "enter b: ";
+    cin >> b;
+    return arg * b;
+
+}
+double circle(double arg)
+{
+    int r;
+    cout << "enter r: ";
+    cin >> r;
+    return pow(r, 2)*pi;
+}
+double func(double x, int num)
+{
+    if (num == 1) return square(x); 
+    else if (num == 2) return rectangle(x); 
+    return circle(x);
+}
+
+int menu()
+{
+    cout << "\nchoose a action\n";
+    cout << "1. Square area\n";
+    cout << "2. Area of a rectangle\n";
+    cout << "3. Area of a circle\n";
+    cout << "4. exit\n";
+    int flag;
+    do {
+        cin >> flag;
+        if (flag >= 1 && flag <= 4) return flag;
+        cout << "Please enter rigth number (1, 2, 3 4)";
+    } while (true);
+}
