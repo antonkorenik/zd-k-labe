@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+double power(double a, double n);
+
+int main()
+{
+	int a, b;
+
+	cout << "Enter number: " << endl;
+	cin >> a;
+	cout << "Enter power: " << endl;
+	cin >> b;
+
+	cout << power(a, b) << endl;
+
+	return 0;
+}
+double power(double a, double n)
+{
+	return exp(log(a) * n); 
+}
