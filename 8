@@ -1,24 +1,24 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
-double power(double a, double n);
+int main() {
+    int i;
+    float num, pow, result = 1, check;
+    cout << "Enter number and power: " << endl;;
+    cin >> num >> pow;
+    if (pow < 0)
+        check = pow * -1;
+    else
+        check = pow;
+    result = num;
+    for (i = 1;i < check ;i++)
+        result = result * num;
 
-int main()
-{
-	int a, b;
-
-	cout << "Enter number: " << endl;
-	cin >> a;
-	cout << "Enter power: " << endl;
-	cin >> b;
-
-	cout << power(a, b) << endl;
-
-	return 0;
+    if (pow > 0)
+        cout << result;
+    else
+        cout << 1 / result;
+    return 0;
 }
-double power(double a, double n)
-{
-	return exp(log(a) * n); 
-}
+    
