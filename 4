@@ -1,0 +1,65 @@
+#include <iostream>
+#include <cmath>
+
+const double pi = 3.1415926; //число пи
+
+double f1(double);
+double f2(double);
+double f3(double);
+double func(double, int);
+int menu();
+
+int main()
+{
+    while (true)
+    {
+        int action = menu();
+        if (action == 4) break; // если введена '4' происходит завершение программы
+        std::cout << "enter x ";
+        double x;
+        std::cin >> x;
+        std::cout << "f(" << x << ")=" << func(x, action); //ответ
+    }
+
+    return 0;
+}
+
+double f1(double arg) // нужна чтобы посчитать формулу 1
+{
+    return arg * arg; // x*x
+
+}
+
+double f2(double arg) // нужна чтобы посчитать формулу 2
+{
+    if (arg < 0) arg = -arg; // если х меньше 0 тогда x = -x (модуль)
+    return arg; // возвращаем х
+
+}
+double f3(double arg)//нужна чтобы посчитать формулу 3
+{
+    if (arg < 0) return -arg; // если х меньше 0 тогда возвращаем -x
+    else if (arg < 2 * pi) return 0; // иначе если x меньше 2 умноженной на число пи вернуть 0
+    return sin(arg); // вернуть синус х
+}
+double func(double x, int num) // нужна для выбора функции в меню
+{
+    if (num == 1) return f1(x);
+    else if (num == 2) return f2(x);
+    return f3(x);
+}
+
+int menu() 
+{
+    std::cout << "\nchoose a action\n";
+    std::cout << "1. x^2\n";
+    std::cout << "2. |x|\n";
+    std::cout << "3. x<0:-x; 0<=x<2pi: 0; x>=2pi: sin(x)\n";
+    std::cout << "4. exit\n";
+    int flag; // эта переменная нужна чтобы сделать проверку 
+    do {
+        std::cin >> flag;
+        if (flag >= 1 && flag <= 4) return flag;
+        std::cout << "Please enter rigth number (1, 2, 3 4)"; 
+    } while (true);
+}
