@@ -1,0 +1,42 @@
+#include <iostream>
+char choice;
+int num, dig;
+using namespace std;
+
+void AddRightDigit(int x, int& y);
+void AddLeftDigit(int x, int& y);
+
+void AddRightDigit(int x, int& y)
+{
+    y = y * 10 + x;
+    cout << "right digital: " << num << "\n";
+}
+void AddLeftDigit(int x, int& y)
+{
+    cout << "left digital: " << x << y << endl;;
+}
+int main()
+{
+  cout << "enter number: " << endl;
+  cin >> num;
+  cout << "enter digital: " << endl;
+  cin >> dig;
+  cout << "enter 'l ' or 'r': " << endl;
+  cin >> choice;
+    switch (choice)
+     {
+        case 'l':
+        {
+            AddLeftDigit(dig, num);
+            break;
+        }
+        case 'r':
+        {
+            AddRightDigit(dig, num);
+            break;
+        }
+        default:
+        cout << "Wrong input " << endl;
+     }
+    return 0;
+}
